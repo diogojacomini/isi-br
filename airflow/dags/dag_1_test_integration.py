@@ -16,6 +16,10 @@ def task_3_func():
     print("Executando Task 3")
 
 
+def task_4_func():
+    print("Executando Task 4")
+
+
 def parallel_task_func():
     print("Executando Task Paralela")
 
@@ -45,6 +49,11 @@ with DAG(
         python_callable=task_3_func,
     )
 
+    task_4 = PythonOperator(
+        task_id="task_4",
+        python_callable=task_4_func,
+    )
+
     # Tarefa paralela com task_1
     parallel_task = PythonOperator(
         task_id="parallel_task",
@@ -53,4 +62,4 @@ with DAG(
 
     # Definindo dependências
     task_1 >> task_2 >> task_3
-    task_1 >> parallel_task
+    task_1 >> parallel_task >> task_4
