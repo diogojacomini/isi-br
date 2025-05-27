@@ -3,3 +3,10 @@
 #
 # Documentation for this file format can be found in "Parameters"
 # Link: https://docs.kedro.org/en/0.19.13/configuration/parameters.html
+columns_mapping:
+  Date: dat_ref
+  Open: open_price
+  Price: close_price
+  High: high_price
+  Low: low_price
+  Change %: change_percentage

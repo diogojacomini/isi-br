@@ -1,0 +1,3 @@
+tb_cds:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/tb_cds.csv
